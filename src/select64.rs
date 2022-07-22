@@ -7,7 +7,7 @@
 /// ## Example
 ///
 /// ```rust
-/// use crate::select64;
+/// use fastperm::select64::select64;
 ///
 /// assert_eq!(1, select64(0, 0b10110));
 /// assert_eq!(2, select64(1, 0b10110));
@@ -114,7 +114,7 @@ pub fn pdep32_fallback(src: u32, mut mask: u32) -> u32 {
         }
         // clear lsb
         mask &= mask - 1;
-        bit = bit << 1;
+        bit <<= 1;
     }
     r
 }
@@ -211,7 +211,7 @@ mod test {
     #[test]
     fn test_select64_one_idx_smear_high() {
         for idx in 0..64_u8 {
-            assert_select64(idx, 0, ((1 as u64) << (idx as u64)).wrapping_neg());
+            assert_select64(idx, 0, (1_u64 << (idx as u64)).wrapping_neg());
         }
     }
 

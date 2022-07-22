@@ -349,32 +349,32 @@ mod test {
     fn test_shuffle() {
         let n = 10;
         let mut s = Shuffle::new(small_rng(), n);
-        let idxs = s.iter_period().collect::<Vec<_>>();
-        assert_permutation(n, idxs.into_iter());
+        let idxs = s.iter_period();
+        assert_permutation(n, idxs);
     }
 
     #[test]
     fn test_shuffle_array() {
         let n = 10;
         let mut s = ShuffleArray::new(small_rng(), n);
-        let idxs = s.iter_period().collect::<Vec<_>>();
-        assert_permutation(n, idxs.into_iter());
+        let idxs = s.iter_period();
+        assert_permutation(n, idxs);
     }
 
     #[test]
     fn test_shuffle_array_incremental() {
         let n = 10;
         let mut s = ShuffleArrayIncremental::new(small_rng(), n);
-        let idxs = s.iter_period().collect::<Vec<_>>();
-        assert_permutation(n, idxs.into_iter());
+        let idxs = s.iter_period();
+        assert_permutation(n, idxs);
     }
 
     #[test]
     fn test_bit_scatter() {
         let n = 10;
         let mut s = BitScatter::new(small_rng(), n);
-        let idxs = s.iter_period().collect::<Vec<_>>();
-        assert_permutation(n, idxs.into_iter());
+        let idxs = s.iter_period();
+        assert_permutation(n, idxs);
     }
 
     proptest! {

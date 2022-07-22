@@ -2,7 +2,7 @@
 name = "fastperm"
 version = "0.1.0"
 authors = ["Philip Hayes <philiphayes9@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 [[bench]]
 name = "select64"
@@ -13,12 +13,9 @@ name = "index_permutation"
 harness = false
 
 [dependencies]
-rand = { version = "0.8.3", features = ["small_rng"] }
+rand = { version = "0.8.5", features = ["small_rng"] }
 rand_xoshiro = "0.6.0"
 
 [dev-dependencies]
-criterion = "0.3.4"
-proptest = "0.10.1"
-
-[profile.release]
-debug = 1
+criterion = "0.3.6"
+proptest = "1"
